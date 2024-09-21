@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build: ./backend                   # Build Node.js backend from the specified directory
+    container_name: mern-backend        # Container name for backend
+    ports:
+      - "3000:3000"                    # Expose port 3000
+    depends_on:
+      - mongo                          # Ensure MongoDB starts before the backend
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mernapp
+    networks:
+      - mern-network
+
+  mongo:
+    image: mongo                       # Use the official MongoDB image
+    container_name: mern-mongo          # Name of MongoDB container
+    ports:
+      - "27017:27017"                  # Expose MongoDB default port
+    volumes:
+      - mongo-data:/data/db            # Persistent data storage
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local                      # Persist MongoDB data

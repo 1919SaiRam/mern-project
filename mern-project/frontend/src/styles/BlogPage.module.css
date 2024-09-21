@@ -1,0 +1,13 @@
+/* BlogPage.module.css */
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #dc3545;
+  }
+  
