@@ -1,9 +1,9 @@
-# mern-project
+ # mern-project
 A project with backend, frontend, Docker, and data analysis !!!!
 
 
 # mern-project/
-├── backend/
+├── backend/  
 │   ├── config/
 │   │   └── db.js                    # MongoDB connection configuration
 │   ├── controllers/
